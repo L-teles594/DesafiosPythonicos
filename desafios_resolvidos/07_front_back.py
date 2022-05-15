@@ -10,9 +10,23 @@ Exemplo: 'abcde', a metade da frente é 'abc' e a de trás é 'de'.
 Finalmente, dadas duas strings a e b, retorne uma string na forma:
 a-frente + b-frente + a-trás + b-trás
 """
+
+def divide(s):
+    if len(s) % 2 == 0:
+        first_half = s[:int(len(s) / 2)]
+        second_half = s[int(len(s) / 2):]
+    else:
+        first_half = s[:int(len(s) / 2) + 1]
+        second_half = s[int(len(s) / 2) + 1:]
+
+    return first_half, second_half
+
+
 def front_back(a, b):
     # +++ SUA SOLUÇÃO +++
-    return
+    x, y = divide(a)
+    w, z = divide(b)
+    return f'{x}{w}{y}{z}'
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
