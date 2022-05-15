@@ -15,16 +15,7 @@ onde todas as instancias de stra foram substituidas por strb.
 
 def fix_start(s):
     # +++ SUA SOLUÇÃO +++
-    first = s[0]
-    fixed = ''
-    for i in s:
-        if len(fixed) < 1:
-            fixed += first
-        elif i == first:
-            fixed += '*'
-        else:
-            fixed += i
-    return fixed
+    return s[0] + s[1:].replace(s[0], '*')
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
