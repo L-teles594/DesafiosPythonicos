@@ -10,9 +10,16 @@ Se o tamanho da string for menor que 3, não altere nada.
 Retorne o resultado da string.
 """
 
+
 def verbing(s):
     # +++ SUA SOLUÇÃO +++
-    return
+    if len(s) < 3:
+        a = s
+    elif 'ing' in s:
+        a = s + 'ly'
+    else:
+        a = s + 'ing'
+    return a
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
