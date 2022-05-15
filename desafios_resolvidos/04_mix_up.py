@@ -13,11 +13,19 @@ Assuma que a e b tem tamanho 2 ou maior.
 """
 
 
+def validation(a, b):
+    if len(a) > 1 and len(b) > 1:
+        return True
+    else:
+        return False
+
 
 def mix_up(a, b):
     # +++ SUA SOLUÇÃO +++
-    return f'{b[0:2] + a[2:]} {a[0:2] + b[2:]}'
-
+    if validation(a, b):
+        return f'{b[0:2] + a[2:]} {a[0:2] + b[2:]}'
+    else:
+        return "We coundn't mixed-up"
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
@@ -45,4 +53,7 @@ if __name__ == '__main__':
     test(mix_up, ('dog', 'dinner'), 'dig donner')
     test(mix_up, ('gnash', 'sport'), 'spash gnort')
     test(mix_up, ('pezzy', 'firm'), 'fizzy perm')
-
+    test(mix_up, ('x', 'y'), "We coundn't mixed-up")
+    test(mix_up, ('xx', 'y'), "We coundn't mixed-up")
+    test(mix_up, ('x', 'yy'), "We coundn't mixed-up")
+    test(mix_up, ('xx', 'yy'), 'yy xx')
